@@ -13,4 +13,13 @@ public class FunRestController {
         return "Hello World! Time on server " + LocalDateTime.now() + "<h1><font face='verdana'>Spring Boot Rocks!</font></h1>";
     }
 
+    @GetMapping("/workout")
+    public String getDailyWorkout(){
+        return "Corre 5 kilometros.";
+    }
+
+    @GetMapping("/fortuna")
+    public String getDailyFortune(){
+        return "este es tu dia de fortuna.";
+    }
 }
