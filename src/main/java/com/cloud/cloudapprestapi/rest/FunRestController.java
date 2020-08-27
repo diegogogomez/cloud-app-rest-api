@@ -11,7 +11,7 @@ public class FunRestController {
 
     @GetMapping("/")
     public String sayHello(){
-        return "Hello World! Time on server is " + LocalDateTime.now() + "<h1><font face='verdana'>Spring Boot Rocks!</font></h1>";
+        return "Hello World! Time on server " + LocalDateTime.now() + "<h1><font face='verdana'>Spring Boot Rocks!</font></h1>";
     }
 
 }
