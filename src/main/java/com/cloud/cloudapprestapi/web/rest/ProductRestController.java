@@ -17,6 +17,7 @@ public class ProductRestController {
         this.productService = theProductService;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/products")
     public List<ProductDto> findAll(){
         return productService.findAll();
