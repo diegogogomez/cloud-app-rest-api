@@ -1,4 +1,4 @@
-package com.cloud.cloudapprestapi.rest;
+package com.cloud.cloudapprestapi.web.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
