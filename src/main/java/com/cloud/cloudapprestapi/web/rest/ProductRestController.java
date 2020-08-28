@@ -17,7 +17,8 @@ public class ProductRestController {
         this.productService = theProductService;
     }
 
-    @CrossOrigin(origins = "https://cloud-app-rest.herokuapp.com/")
+    // @CrossOrigin(origins = "https://cloud-app-rest.herokuapp.com/")
+    @CrossOrigin
     @GetMapping("/products")
     public List<ProductDto> findAll(){
         return productService.findAll();
