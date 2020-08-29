@@ -1,9 +1,15 @@
 package com.cloud.cloudapprestapi.web.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="products")
+@Getter
+@Setter
 public class ProductDto {
 
     @Id
@@ -17,44 +23,7 @@ public class ProductDto {
     @Column(name = "product_price")
     private double productPrice;
 
-    public ProductDto() {
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_producto")
+    private Set<BillDto> billings;
 
-    public ProductDto(String productName, double productPrice) {
-        this.productName = productName;
-        this.productPrice = productPrice;
-    }
-
-    public int getProductId() {
-        return productId;
-    }
-
-    public void setProductId(int productId) {
-        this.productId = productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    @Override
-    public String toString() {
-        return "ProductDto{" +
-                "productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", productPrice=" + productPrice +
-                '}';
-    }
 }

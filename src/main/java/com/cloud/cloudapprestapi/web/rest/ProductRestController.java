@@ -1,6 +1,5 @@
 package com.cloud.cloudapprestapi.web.rest;
 
-import com.cloud.cloudapprestapi.dao.ProductDao;
 import com.cloud.cloudapprestapi.service.ProductService;
 import com.cloud.cloudapprestapi.web.model.ProductDto;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +16,7 @@ public class ProductRestController {
         this.productService = theProductService;
     }
 
-    // @CrossOrigin(origins = "https://cloud-app-rest.herokuapp.com/")
+
     @CrossOrigin
     @GetMapping("/products")
     public List<ProductDto> findAll(){
