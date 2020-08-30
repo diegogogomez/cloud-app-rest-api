@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@CrossOrigin
 @RestController
 @RequestMapping("/api/v2")
 public class PruebaController {
@@ -29,6 +28,7 @@ public class PruebaController {
 
 
     @PostMapping("/bills")
+    @CrossOrigin
     public ResponseDto pruebaSaludo(@Valid @RequestBody PreventDto preventDto, BindingResult result){
 
         System.out.println(result.hasErrors());
@@ -49,6 +49,7 @@ public class PruebaController {
     }
 
     @GetMapping("/obtain_products")
+    @CrossOrigin
     public List<Quantity> obtainProducts(){
 
         List<Quantity> respuesta = new ArrayList<>();
