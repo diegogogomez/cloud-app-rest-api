@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,7 +25,8 @@ public class ProductDto {
     @Column(name = "product_price")
     private double productPrice;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "id_producto")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     private Set<BillDto> billings;
+
 
 }

@@ -1,8 +1,19 @@
 package com.cloud.cloudapprestapi.web.model;
 
-import javax.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class BillDto {
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+
+@Entity
+@Table(name = "bills")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class BillDto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +30,8 @@ public class BillDto {
     private String billDispatch;
 
     @ManyToOne
-    @JoinColumn(name = "bill_product", nullable = false)
+    @JoinColumn(name = "bill_product")
     private ProductDto product;
+
 
 }
