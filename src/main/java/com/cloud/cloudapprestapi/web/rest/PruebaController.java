@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v2")
+@CrossOrigin
 public class PruebaController {
 
     @Autowired
